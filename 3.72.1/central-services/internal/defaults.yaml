@@ -38,6 +38,7 @@ defaults:
         port: null
       route:
         enabled: false
+        termination: reencrypt
 
   scanner:
     disable: false

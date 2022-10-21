@@ -192,6 +192,8 @@
 #      enabled: null
 #      # Specify a custom hostname if desired, otherwise accept the default from OpenShift.
 #      host: null
+#      # Specify if you want to terminate TLS at OCP router (default) or passthrough to Central
+#      termination: null
 #
 #
 ## Configuration options relating to StackRox Scanner.

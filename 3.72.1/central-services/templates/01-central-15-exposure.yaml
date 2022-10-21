@@ -17,7 +17,14 @@ spec:
   port:
     targetPort: https
   tls:
+{{- if eq ._rox.central.exposure.route.termination "passthrough" -}}
     termination: passthrough
+{{- else -}}
+    termination: reencrypt
+    destinationCACertificate: |
+      {{- ._rox._ca.Cert | nindent 6 }}
+    insecureEdgeTerminationPolicy: Redirect
+{{- end -}}
   to:
     kind: Service
     name: central
